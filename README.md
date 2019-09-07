@@ -1,1 +1,0 @@
-# storyhub-user-registration-backend
