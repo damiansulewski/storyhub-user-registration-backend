@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
 }
@@ -12,7 +12,23 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    springfoxSwagger2 = '2.9.2'
+    springSecurityCrypto = '5.1.6.RELEASE'
+    lombok = '1.18.8'
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    implementation "io.springfox:springfox-swagger2:${springfoxSwagger2}"
+    implementation "io.springfox:springfox-swagger-ui:${springfoxSwagger2}"
+    implementation "org.springframework.security:spring-security-crypto:${springSecurityCrypto}"
+
+    compileOnly "org.projectlombok:lombok:${lombok}"
+
+    annotationProcessor "org.projectlombok:lombok:${lombok}"
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
