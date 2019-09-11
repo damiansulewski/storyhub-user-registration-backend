@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "user", url = "${user-authenticator.user-repository.server-url}")
+@FeignClient(name = "user", url = "${user-authenticator.user-repository.server-url}")
 public interface UserClient {
     @PostMapping(path = "${user-authenticator.user-repository.create-user-path}")
     void createUser(@RequestBody CreateUserRequest request);

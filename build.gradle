@@ -25,10 +25,10 @@ dependencies {
 
     implementation "io.springfox:springfox-swagger2:${springfoxSwagger2}"
     implementation "io.springfox:springfox-swagger-ui:${springfoxSwagger2}"
-    implementation "org.springframework.security:spring-security-core:${springSecurity}"
-    implementation "org.springframework.security:spring-security-web:${springSecurity}"
+//    implementation "org.springframework.security:spring-security-core:${springSecurity}"
+//    implementation "org.springframework.security:spring-security-web:${springSecurity}"
     implementation "org.springframework.security:spring-security-crypto:${springSecurity}"
-    implementation "org.springframework.security:spring-security-config:${springSecurity}"
+//    implementation "org.springframework.security:spring-security-config:${springSecurity}"
     implementation "org.springframework.cloud:spring-cloud-starter-openfeign:${openFeign}"
 
     compileOnly "org.projectlombok:lombok:${lombok}"

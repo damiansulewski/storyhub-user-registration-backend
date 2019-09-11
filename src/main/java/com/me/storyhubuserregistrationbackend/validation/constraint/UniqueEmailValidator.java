@@ -13,6 +13,6 @@ public class UniqueEmailValidator implements ConstraintValidator<ValidUniqueEmai
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return userService.isEmailAlreadyExists(value);
+        return !userService.isEmailAlreadyExists(value);
     }
 }
