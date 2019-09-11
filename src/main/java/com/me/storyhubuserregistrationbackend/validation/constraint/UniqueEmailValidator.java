@@ -1,7 +1,7 @@
 package com.me.storyhubuserregistrationbackend.validation.constraint;
 
 import com.me.storyhubuserregistrationbackend.user.UserService;
-import com.me.storyhubuserregistrationbackend.validation.annotation.ValidUniqueEmail;
+import com.me.storyhubuserregistrationbackend.validation.ValidUniqueEmail;
 import lombok.RequiredArgsConstructor;
 
 import javax.validation.ConstraintValidator;

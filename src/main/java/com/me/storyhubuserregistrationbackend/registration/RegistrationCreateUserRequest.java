@@ -1,8 +1,9 @@
 package com.me.storyhubuserregistrationbackend.registration;
 
-import com.me.storyhubuserregistrationbackend.validation.annotation.ValidEmail;
-import com.me.storyhubuserregistrationbackend.validation.annotation.ValidPassword;
-import com.me.storyhubuserregistrationbackend.validation.annotation.ValidUniqueEmail;
+import com.me.storyhubuserregistrationbackend.model.Gender;
+import com.me.storyhubuserregistrationbackend.validation.ValidEmail;
+import com.me.storyhubuserregistrationbackend.validation.ValidPassword;
+import com.me.storyhubuserregistrationbackend.validation.ValidUniqueEmail;
 import lombok.Getter;
 
 import javax.validation.constraints.AssertTrue;
@@ -10,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Getter
-final class CreateUserRequest {
+public final class RegistrationCreateUserRequest {
     @NotNull(message = "{validation.message.required}")
     @Size(min = 2, max = 50, message = "{validation.message.invalid-size}")
     private String name;
@@ -26,7 +27,7 @@ final class CreateUserRequest {
     private String email;
 
     @NotNull(message = "{validation.message.required}")
-    private String gender;
+    private Gender gender;
 
     @NotNull(message = "{validation.message.required}")
     @ValidPassword

@@ -1,4 +1,4 @@
-package com.me.storyhubuserregistrationbackend.validation.annotation;
+package com.me.storyhubuserregistrationbackend.validation;
 
 
 import com.me.storyhubuserregistrationbackend.validation.constraint.EmailValidator;

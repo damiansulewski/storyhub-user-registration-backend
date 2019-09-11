@@ -14,13 +14,13 @@ public class RegistrationController {
 
     @ResponseStatus(value = HttpStatus.CREATED)
     @PostMapping("create-user")
-    public void createUser(@Valid @RequestBody CreateUserRequest request) {
+    public void createUser(@Valid @RequestBody RegistrationCreateUserRequest request) {
         registrationService.createUser(request);
     }
 
     @ResponseStatus(value = HttpStatus.CREATED)
     @PutMapping("activate-user")
-    public void acceptActivate(@Valid @RequestBody ActivateUserRequest request) {
+    public void acceptActivate(@Valid @RequestBody RegistrationActivateUserRequest request) {
         registrationService.activateUser(request);
     }
 }

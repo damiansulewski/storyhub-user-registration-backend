@@ -1,0 +1,7 @@
+user-authenticator:
+  user-repository:
+    server-url: localhost:8080
+    create-user-path: /user/create
+    is-email-already-exists-path: /user/is-email-already-exists
+server:
+  port: 8081

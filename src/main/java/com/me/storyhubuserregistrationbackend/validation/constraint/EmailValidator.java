@@ -1,7 +1,7 @@
 package com.me.storyhubuserregistrationbackend.validation.constraint;
 
 
-import com.me.storyhubuserregistrationbackend.validation.annotation.ValidEmail;
+import com.me.storyhubuserregistrationbackend.validation.ValidEmail;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

@@ -1,7 +1,7 @@
 package com.me.storyhubuserregistrationbackend.validation.constraint;
 
 
-import com.me.storyhubuserregistrationbackend.validation.annotation.ValidPassword;
+import com.me.storyhubuserregistrationbackend.validation.ValidPassword;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

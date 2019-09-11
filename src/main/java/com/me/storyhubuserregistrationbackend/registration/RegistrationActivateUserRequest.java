@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @AllArgsConstructor
-final class ActivateUserRequest {
+public final class RegistrationActivateUserRequest {
     @NotNull(message = "{validation.message.required}")
     private final String uuid;
 }

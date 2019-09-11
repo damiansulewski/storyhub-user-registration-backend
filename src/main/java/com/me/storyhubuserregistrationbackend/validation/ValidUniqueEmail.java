@@ -1,7 +1,7 @@
-package com.me.storyhubuserregistrationbackend.validation.annotation;
+package com.me.storyhubuserregistrationbackend.validation;
 
 
-import com.me.storyhubuserregistrationbackend.validation.constraint.PasswordValidator;
+import com.me.storyhubuserregistrationbackend.validation.constraint.UniqueEmailValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -15,13 +15,12 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 @Target({TYPE, FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
-@Constraint(validatedBy = PasswordValidator.class)
-public @interface ValidPassword {
+@Constraint(validatedBy = UniqueEmailValidator.class)
+public @interface ValidUniqueEmail {
 
-    String message() default "{validation.message.invalid-password}";
+    String message() default "{validation.message.email-already-exists}";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
 }
