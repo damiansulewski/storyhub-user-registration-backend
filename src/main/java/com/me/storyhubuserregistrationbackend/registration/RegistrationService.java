@@ -23,4 +23,10 @@ public class RegistrationService {
         authorizationTokenService.useToken(tokenUuid);
         userService.activateUser(userUuid);
     }
+
+    public void resendActivationEmail(String userUuid) {
+        String tokenUuid = authorizationTokenService.getToken(userUuid);
+
+        //TODO send activation email
+    }
 }

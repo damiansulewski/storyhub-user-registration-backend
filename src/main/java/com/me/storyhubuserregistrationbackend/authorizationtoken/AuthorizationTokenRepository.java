@@ -10,4 +10,6 @@ public interface AuthorizationTokenRepository extends CrudRepository<Authorizati
     Optional<AuthorizationTokenEntity> findByUserUuidAndToken(String userUuid, String token);
 
     Optional<AuthorizationTokenEntity> findByToken(String token);
+
+    Optional<AuthorizationTokenEntity> findByUserUuid(String userUuid);
 }

@@ -34,4 +34,12 @@ public class AuthorizationTokenService {
                                 token)));
         authorizationToken.setUsed(Boolean.TRUE);
     }
+
+    public String getToken(String userUuid) {
+        AuthorizationTokenEntity authorizationToken = authorizationTokenRepository.findByUserUuid(userUuid)
+                .orElseThrow(() ->
+                        new RuntimeException(String.format("AuthorizationTokenEntity not found searching by userUuid=[%s]",
+                                userUuid)));
+        return authorizationToken.getToken();
+    }
 }

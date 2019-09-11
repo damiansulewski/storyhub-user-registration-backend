@@ -26,4 +26,9 @@ public class RegistrationController {
     public void acceptActivate(@NotNull @RequestParam("userUuid") String userUuid, @NotNull @RequestParam("tokenUuid") String tokenUuid) {
         registrationService.activateUser(userUuid, tokenUuid);
     }
+
+    @GetMapping("resend-activation-email")
+    public void resendActivationEmail(@NotNull @RequestParam("userUuid") String userUuid) {
+        registrationService.resendActivationEmail(userUuid);
+    }
 }
