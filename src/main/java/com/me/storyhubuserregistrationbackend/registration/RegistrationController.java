@@ -2,10 +2,13 @@ package com.me.storyhubuserregistrationbackend.registration;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
+@Validated
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("registration")
@@ -19,8 +22,8 @@ public class RegistrationController {
     }
 
     @ResponseStatus(value = HttpStatus.CREATED)
-    @PutMapping("activate-user")
-    public void acceptActivate(@Valid @RequestBody RegistrationActivateUserRequest request) {
-        registrationService.activateUser(request);
+    @GetMapping("activate-user")
+    public void acceptActivate(@NotNull @RequestParam("userUuid") String userUuid, @NotNull @RequestParam("tokenUuid") String tokenUuid) {
+        registrationService.activateUser(userUuid, tokenUuid);
     }
 }

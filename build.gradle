@@ -22,6 +22,7 @@ ext {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     implementation "io.springfox:springfox-swagger2:${springfoxSwagger2}"
     implementation "io.springfox:springfox-swagger-ui:${springfoxSwagger2}"
@@ -31,6 +32,7 @@ dependencies {
 //    implementation "org.springframework.security:spring-security-config:${springSecurity}"
     implementation "org.springframework.cloud:spring-cloud-starter-openfeign:${openFeign}"
 
+    runtimeOnly 'org.postgresql:postgresql'
     compileOnly "org.projectlombok:lombok:${lombok}"
 
     annotationProcessor "org.projectlombok:lombok:${lombok}"

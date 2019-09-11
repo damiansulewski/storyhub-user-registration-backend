@@ -1,7 +1,6 @@
 package com.me.storyhubuserregistrationbackend.user;
 
 import com.me.storyhubuserregistrationbackend.authorization.LoginUserRequest;
-import com.me.storyhubuserregistrationbackend.registration.RegistrationActivateUserRequest;
 import com.me.storyhubuserregistrationbackend.registration.RegistrationCreateUserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,8 +12,8 @@ public class UserService {
     private final UserClient userClient;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    public void createUser(RegistrationCreateUserRequest request) {
-        userClient.createUser(
+    public String createUser(RegistrationCreateUserRequest request) {
+        return userClient.createUser(
                 new CreateUserRequest(request.getName(),
                         request.getSurname(),
                         request.getEmail(),
@@ -22,7 +21,8 @@ public class UserService {
                         passwordEncoder.encode(request.getPassword())));
     }
 
-    public void activateUser(RegistrationActivateUserRequest request) {
+    public void activateUser(String uuid) {
+        userClient.activateUser(uuid);
     }
 
     public void loginUser(LoginUserRequest request) {
