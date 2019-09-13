@@ -15,7 +15,7 @@ public class AuthorizationController {
     private final UserService userService;
 
     @PostMapping("login-user")
-    public void loginUser(@Valid LoginUserRequest request) {
+    public void loginUser(@Valid AuthorizationLoginUserRequest request) {
         userService.loginUser(request);
     }
 }

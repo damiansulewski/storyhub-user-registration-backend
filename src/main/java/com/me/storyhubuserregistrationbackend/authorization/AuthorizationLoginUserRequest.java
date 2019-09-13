@@ -5,7 +5,7 @@ import lombok.Getter;
 import javax.validation.constraints.NotNull;
 
 @Getter
-public final class LoginUserRequest {
+public final class AuthorizationLoginUserRequest {
     @NotNull
     private String email;
 
