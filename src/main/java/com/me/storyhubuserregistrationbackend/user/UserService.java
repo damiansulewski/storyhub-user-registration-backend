@@ -1,6 +1,5 @@
 package com.me.storyhubuserregistrationbackend.user;
 
-import com.me.storyhubuserregistrationbackend.authorization.AuthorizationLoginUserRequest;
 import com.me.storyhubuserregistrationbackend.registration.RegistrationCreateUserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,13 +24,11 @@ public class UserService {
         userClient.activateUser(uuid);
     }
 
-    public void loginUser(AuthorizationLoginUserRequest request) {
-        userClient.loginUser(
-                new LoginUserRequest(request.getEmail(),
-                        request.getPassword()));
-    }
-
     public boolean isEmailAlreadyExists(String email) {
         return userClient.isEmailAlreadyExists(email);
+    }
+
+    public UserCredential getUserCredential(String email) {
+        return userClient.getUserCredential(email);
     }
 }

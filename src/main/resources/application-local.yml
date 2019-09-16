@@ -31,4 +31,4 @@ user-authenticator:
     create-user-path: /user/create
     activate-user-path: /user/activate
     is-email-already-exists-path: /user/is-email-already-exists
-    login-user: /user/login
+    user-credential: /user/{email}/credential

@@ -14,6 +14,6 @@ public interface UserClient {
     @GetMapping(path = "${user-authenticator.user-repository.is-email-already-exists-path}")
     boolean isEmailAlreadyExists(@RequestParam("email") String email);
 
-    @PostMapping("${user-authenticator.user-repository.login-user}")
-    boolean loginUser(@RequestBody LoginUserRequest request);
+    @GetMapping("${user-authenticator.user-repository.user-credential}")
+    UserCredential getUserCredential(@PathVariable("email") String email);
 }
