@@ -1,6 +1,3 @@
-server:
-  port: 8081
-
 spring:
   jpa:
     database: postgresql
@@ -13,7 +10,7 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
-#        default_schema: authorization_data
+  #        default_schema: authorization_data
   datasource:
     platform: postgres
     url: jdbc:postgresql://ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/d2kpopai516dm6
